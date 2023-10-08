@@ -7,9 +7,13 @@ import productRoutes from "./routes/productRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 const port = process.env.PORT || 5050;
 
-connectDB();
+connectDB(); // Connect to MongoDB
 
 const app = express();
+
+//Parser middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true}));
 
 app.get("/", (req, res) => {
   res.send("API is running...");
