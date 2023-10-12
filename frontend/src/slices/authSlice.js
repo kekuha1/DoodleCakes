@@ -1,5 +1,4 @@
-import { createSlice } from "reduxjs/toolkit";
-import { create } from "ts-node";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   userInfo: localStorage.getItem("userInfo")
