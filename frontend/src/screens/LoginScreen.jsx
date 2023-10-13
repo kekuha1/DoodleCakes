@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Row, Col, Form, Button, ToastHeader } from "react-bootstrap";
+import { Row, Col, Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import FormContainer from "../components/FormContainer";
 import Loader from "../components/Loader";
@@ -75,10 +75,10 @@ const LoginScreen = () => {
       </Form>
       <Row className="py-3">
         <Col>
-          New Customer?
-          <Link
-            to={redirect ? `/register?redirect=${redirect}` : "/register"}
-          ></Link>
+          New Customer?{" "}
+          <Link to={redirect ? `/register?redirect=${redirect}` : "/register"}>
+            Register
+          </Link>
         </Col>
       </Row>
     </FormContainer>

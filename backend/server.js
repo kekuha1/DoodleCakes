@@ -14,7 +14,7 @@ const app = express();
 
 //Parser middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 
@@ -27,6 +27,6 @@ app.use("/api/users", userRoutes);
 
 app.use(notFound);
 
-app.use;
+app.use(errorHandler);
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
