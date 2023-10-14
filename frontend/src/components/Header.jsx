@@ -8,6 +8,7 @@ import { useLogoutMutation } from "../slices/usersApiSlice";
 import { logout } from "../slices/authSlice";
 import logo from "../assets/logo.png";
 
+
 const Header = () => {
   const { cartItems } = useSelector((state) => state.cart);
   const { userInfo } = useSelector((state) => state.auth);
@@ -15,15 +16,15 @@ const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [logoutApiCall] = useLogoutMutation(); 
+  const [logoutApiCall] = useLogoutMutation();
 
   const logoutHandler = async () => {
-    try{
+    try {
       await logoutApiCall().unwrap();
       dispatch(logout());
-      navigate('/login');
-    }catch(error){
-        console.log(error);
+      navigate("/login");
+    } catch (error) {
+      console.log(error);
     }
   };
   return (
